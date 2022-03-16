@@ -1,16 +1,25 @@
+
 initGame();
 
 function initGame() {
 
+
     	// Get the modal
-	let modal = document.getElementById("myModal");
+	const modal = document.getElementById("myModal");
 
 	// Get the button that opens the modal
-	let btn = document.getElementById("myBtn");
+	const btn = document.getElementById("myBtn");
 
 	// When the user clicks the button, open the modal 
 	btn.onclick = function() {
   	modal.style.display = "block";
-}
+} 	
+  	let button = document.querySelector("#button")
+  	
+  	button.addEventListener("click", function () {
+  		modal.style.display = "block";
+  		button.style.top = "50%";
+  	});
+
 
 }
