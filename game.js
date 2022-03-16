@@ -8,7 +8,6 @@ function getRandomInt(max) {
 
 function initGame() {
 
-
     	// Get the modal
 	const modal = document.getElementById("myModal");
 
@@ -19,13 +18,13 @@ function initGame() {
 	btn.onclick = function() {
   	modal.style.display = "block";
 } 	
-  	let button = document.querySelector("#button")
+  	const button = document.querySelector("#button")
   	
   	
   	
   	button.addEventListener("click", function () {
-  		let top = getRandomInt(100);
-  		let left = getRandomInt(100);
+  		let top = getRandomInt(98);
+  		let left = getRandomInt(98);
   		modal.style.display = "block";
   		button.style.top = top;
   		button.style.left = left;

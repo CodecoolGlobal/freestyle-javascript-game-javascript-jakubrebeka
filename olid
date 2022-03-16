@@ -1,0 +1,55 @@
+[33mcommit ce5bd45d707a9b11a43a1d0d57f6d6d503f0bbd2[m[33m ([m[1;36mHEAD -> [m[1;32mdevelopment[m[33m, [m[1;31morigin/development[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 40ee02c 24cd65b
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 11:44:40 2022 +0100
+
+    Fix commit
+
+[33mcommit 40ee02cd5ffeb9d158c544ed1629c09338bbed9c[m
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 11:42:24 2022 +0100
+
+    Feature: Button position change on click
+
+[33mcommit 24cd65b1b8eb0da4c84adf8febf74a1a4aceb632[m
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 11:42:24 2022 +0100
+
+    Feature: Button position change on clic
+
+[33mcommit daaeddea892ee06952da6a92e08bf541de31713c[m
+Merge: a6300df 294587b
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 10:58:05 2022 +0100
+
+    Merge branch 'development' of github.com:CodecoolGlobal/freestyle-javascript-game-javascript-jakubrebeka into development
+
+[33mcommit a6300df275bbbd5eb51c6c50f330ede261cc1dfe[m
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 10:57:25 2022 +0100
+
+    Add: onClick button, position change
+
+[33mcommit 294587b05b28e078707f6eb0c791ed62c8b8a5a8[m
+Author: imi <szabimi12@gmail.com>
+Date:   Wed Mar 16 10:27:49 2022 +0100
+
+    added gitignore
+
+[33mcommit a3ceb62d29ee552d358d5572b84175da9bc8a738[m
+Author: mBartal88 <miklos.bartal@gmail.com>
+Date:   Wed Mar 16 10:25:12 2022 +0100
+
+    Init game basics, single pop up button
+
+[33mcommit 0e85a16bb2653dbf55c62139a6fc65f65e24b158[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: appuser <appuser@journey2-5b6c88c44b-ft54l>
+Date:   Wed Mar 16 08:37:11 2022 +0000
+
+    starter project
+
+[33mcommit b25d3b378f3085a4f73a3e376824716023b819c0[m
+Author: appuser <appuser@journey2-5b6c88c44b-ft54l>
+Date:   Sat Mar 12 09:40:22 2022 +0000
+
+    starter project
