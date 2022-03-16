@@ -1,8 +1,12 @@
 
 initGame();
 
-function initGame() {
 
+function getRandomInt(max) {
+  		return `${Math.floor(Math.random() * max)}%`;
+	}
+
+function initGame() {
 
     	// Get the modal
 	const modal = document.getElementById("myModal");
@@ -13,13 +17,17 @@ function initGame() {
 	// When the user clicks the button, open the modal 
 	btn.onclick = function() {
   	modal.style.display = "block";
-	}
-  	let button = document.querySelector("#button")
+
+  	const button = document.querySelector("#button")
 
 	count_score();
+	}
   	button.addEventListener("click", function () {
+  		let top = getRandomInt(98);
+  		let left = getRandomInt(98);
   		modal.style.display = "block";
-  		button.style.top = "50%";
+  		button.style.top = top;
+  		button.style.left = left;
   	});
 }
 
