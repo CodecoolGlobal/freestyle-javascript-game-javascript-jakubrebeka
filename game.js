@@ -1,6 +1,11 @@
 
 initGame();
 
+
+function getRandomInt(max) {
+  		return `${Math.floor(Math.random() * max)}%`;
+	}
+
 function initGame() {
 
 
@@ -16,10 +21,20 @@ function initGame() {
 } 	
   	let button = document.querySelector("#button")
   	
+  	
+  	
   	button.addEventListener("click", function () {
+  		let top = getRandomInt(100);
+  		let left = getRandomInt(100);
   		modal.style.display = "block";
-  		button.style.top = "50%";
+  		button.style.top = top;
+  		button.style.left = left;
   	});
+  	
+  	
+
+	
+	
 
 
 }
