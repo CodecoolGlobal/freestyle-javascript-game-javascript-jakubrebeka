@@ -22,5 +22,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   width: 2.35%; /* Could be more or less, depending on screen size */
 
 }
-
+#score-num{
+  color: darkblue;
+  text-align: right;
+}
 
