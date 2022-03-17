@@ -18,7 +18,11 @@
 	<div id="myModal" class="modal">
     <div id="timel"><h2>Time left: <span id="time">01:00</span></h2> </div>
         <h2 id="score-num">Score: 0</h2>
-  		<div class="modal-content">
+
+                <form method="POST" action="/result">
+                <input type="hidden" name="result" value="21"/>
+                <button id="save-button" value="20">Save</button>
+                </form>
 
     			<button id="button" class="button">ALERT</button>
             

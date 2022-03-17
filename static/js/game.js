@@ -91,11 +91,12 @@ window.onload = function (){
 
 
  })}
+let score = 0;
 
 
 function count_score(){
 	let score_num = document.getElementById("score-num")
-	let score = 0;
+
  	let pop = document.getElementById("button");
 	pop.addEventListener("click", () =>{
 		let sound = new Audio('../static/music/success.wav');

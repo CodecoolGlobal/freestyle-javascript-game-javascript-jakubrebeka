@@ -16,12 +16,11 @@ def index():
     return render_template("index.html")
 
 
-@app.route("/result", methods=["GET", "POST"])
+@app.route("/result", methods=['GET', 'POST'])
 def result():
-    if 'user_name' in session:
-        return render_template("result.html", result=session["count"])
-
-    return render_template("index.html", username="not logged in")
+    if request.method == 'POST':
+        print(request.form.get('result'))
+        return render_template('result.html')
 
 
 @app.route('/logout')
