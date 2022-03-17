@@ -8,20 +8,29 @@
     </head>
     
     <body>
-      
-	<button id="myBtn">Start Game</button>
 
+    <form action="/" method="post">
+    <label for="name">Player</label>
+    <input name="player" id="name" type="text" onkeyup="success()">
+	<button type="submit" id="myBtn" name="start" value="start" disabled>Start Game</button>
+    </form>
 
 	<div id="myModal" class="modal">
     <div id="timel"><h2>Time left: <span id="time">01:00</span></h2> </div>
         <h2 id="score-num">Score: 0</h2>
-  		<div class="modal-content">
+
+                <form method="POST" action="/result">
+                <input type="hidden" name="result" value="21"/>
+                <button id="save-button" value="20">Save</button>
+                </form>
 
     			<button id="button" class="button">ALERT</button>
             
   		</div>
         <div>
                 <button id="mine" class="mine">ALER T</button>
+                <button id="mine2" class="mine">ALER T</button>
+                <button id="mine3" class="mine">ALER T</button>
         </div>
         <div> <button id="restart" class="hide_button">Restart Game </button>
 

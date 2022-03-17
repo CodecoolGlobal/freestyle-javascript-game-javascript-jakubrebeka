@@ -1,3 +1,10 @@
+function success() {
+	 if(document.getElementById("name").value==="") {
+            document.getElementById('myBtn').disabled = true;
+        } else {
+            document.getElementById('myBtn').disabled = false;
+        }
+    }
 
 
 initGame();
@@ -24,31 +31,25 @@ function initGame() {
 	let audio = new Audio('../static/music/background.mp3');
 	audio.play();
 	}
+	let mine = document.getElementById("mine")
+	let mine2 = document.getElementById("mine2")
+	let mine3 = document.getElementById("mine3")
+	let buttons = [mine, mine2, mine3]
 
-  	button.addEventListener("click", function () {
-  		let top = getRandomInt(98);
-  		let left = getRandomInt(98);
-  		modal.style.display = "block";
-  		button.style.top = top;
-  		button.style.left = left;
-  	});
-
-	button.addEventListener("click", function () {
+	for (let i=0; i<buttons.length; i++) {
+		button.addEventListener("click", function () {
 		let top = getRandomInt(98);
 		let left = getRandomInt(98);
-		mine.style.top = top;
-		mine.style.left = left;
+		buttons[i].style.top = top;
+		buttons[i].style.left = left;
 	});
-
-	mine.addEventListener("click", function () {
+		buttons[i].addEventListener("click", function () {
 		let top = getRandomInt(98);
 		let left = getRandomInt(98);
 		modal.style.display = "block";
-  		mine.style.top = top;
-  		mine.style.left = left;
+  		buttons[i].style.top = top;
+  		buttons[i].style.left = left;
 	})
-}
-
 
  function countdown(duration,display) {
  	let timer = duration, minutes, seconds;
@@ -86,26 +87,26 @@ start.style.display = "none";
  )}
 
 
-function count_score(){
+function count_score() {
 	let score_num = document.getElementById("score-num")
 	let score = 0;
- 	let pop = document.getElementById("button");
-	pop.addEventListener("click", () =>{
+	let pop = document.getElementById("button");
+	pop.addEventListener("click", () => {
 		let sound = new Audio('../static/music/success.wav');
 		sound.play();
 		score += 1;
 		console.log(score);
-		score_num.innerText="Score: "+ score;
+		score_num.innerText = "Score: " + score;
 	})
 
+	let mineClick = document.getElementsByClassName("mine");
+	for (let i = 0; i < mineClick.length; i++) {
+		mineClick[i].addEventListener('click', () => {
+			let sound2 = new Audio('../static/music/miss.wav');
+			sound2.play();
+			score -= 1;
+			console.log(score);
+			score_num.innerText = "Score: " + score;
+		})
+	}
 }
-
-		let mineClick = document.getElementById("mine");
-	mineClick.addEventListener('click', () => {
-		let sound2 = new Audio('../static/music/miss.wav');
-		sound2.play();
-		score -= 1;
-		console.log(score);
-		score_num.innerText="Score: "+ score;
-	})
-
