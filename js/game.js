@@ -72,12 +72,3 @@ function count_score(){
 		score_num.innerText="Score: "+ score;
 	})
 }
-
-function game_over(oneMinute){
-	setTimeout(function () {
-		
-		}
-	)
-
-
-}
