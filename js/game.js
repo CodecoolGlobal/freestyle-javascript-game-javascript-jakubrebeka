@@ -21,7 +21,26 @@ function initGame() {
   	const button = document.querySelector("#button")
 	const mine = document.querySelector("#mine")
 	count_score();
+	}
+	let mine = document.getElementById("mine")
+	let mine2 = document.getElementById("mine2")
+	let mine3 = document.getElementById("mine3")
+	let buttons = [mine, mine2, mine3]
 
+	for (let i=0; i<buttons.length; i++) {
+		button.addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		buttons[i].style.top = top;
+		buttons[i].style.left = left;
+	});
+		buttons[i].addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		modal.style.display = "block";
+  		buttons[i].style.top = top;
+  		buttons[i].style.left = left;
+	})
 	}
 
   	button.addEventListener("click", function () {
@@ -31,21 +50,6 @@ function initGame() {
   		button.style.top = top;
   		button.style.left = left;
   	});
-
-	button.addEventListener("click", function () {
-		let top = getRandomInt(98);
-		let left = getRandomInt(98);
-		mine.style.top = top;
-		mine.style.left = left;
-	});
-
-	mine.addEventListener("click", function () {
-		let top = getRandomInt(98);
-		let left = getRandomInt(98);
-		modal.style.display = "block";
-  		mine.style.top = top;
-  		mine.style.left = left;
-	})
 
 }
 
