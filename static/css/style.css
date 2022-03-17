@@ -52,16 +52,39 @@ body {
 
 
 .restart {
+    position: fixed;
+    top: 75%;
+}
+
+#score {
 	position: fixed;
-	top: 75%;
+	top: 80%;
 	left: 43.5%;
 	height: 5%;
 	width: 13%;
 	font-size: 180%;
 }
 
-.hide_button{
-  display: none;
+#save-button {
+	position: fixed;
+	top: 85%;
+	left: 43.5%;
+	height: 5%;
+	width: 13%;
+	font-size: 180%;
+}
+
+.hide_button {
+    display: none;
+}
+
+#back {
+	position: fixed;
+	top: 40%;
+	left: 43.5%;
+	height: 5%;
+	width: 13%;
+	font-size: 180%;
 }
 
 .button{
@@ -148,4 +171,24 @@ body {
   top: 0;
   opacity: 1;
   transition: 0s;
+}
+
+#bonus {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #ddd;
+  font-size: 25px;
+  background-color: black;
+  margin-top: 550px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#bonus th, #bonus td {
+  text-align: left;
+  padding: 12px;
+}
+
+#bonus {
+  border-bottom: 1px solid #ddd;
 }

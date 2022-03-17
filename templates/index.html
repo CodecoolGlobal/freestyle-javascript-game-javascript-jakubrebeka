@@ -13,18 +13,24 @@
     <label for="name">Player</label>
     <input name="player" id="name" type="text" onkeyup="success()">
 	<button type="submit" id="myBtn" name="start" value="start" disabled>Start Game</button>
+
+    </form>
+    <form action="/result">
+    <input id="score" type="submit" value="Scores" />
     </form>
         <button class="restart hide_button">Restart Game </button>
 
+
+                    <form method="POST" action="/result">
+                <input id="result" type="hidden" name="result" value="a"/>
+                <button type="submit" id="save-button">Save</button>
+                </form>
 
 	<div id="myModal" class="modal">
     <div id="timel"><h2>Time left: <span id="time">01:00</span></h2> </div>
         <h2 id="score-num">Score: 0</h2>
 
-                <form method="POST" action="/result">
-                <input type="hidden" name="result" value="21"/>
-                <button id="save-button" value="20">Save</button>
-                </form>
+
 
     			<button id="button" class="button">ALERT</button>
 
