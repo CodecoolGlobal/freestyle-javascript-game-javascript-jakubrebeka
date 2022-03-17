@@ -51,7 +51,7 @@ body {
 }
 
 
-#restart {
+.restart {
 	position: fixed;
 	top: 75%;
 	left: 43.5%;
