@@ -1,12 +1,5 @@
-function success() {
-    if (document.getElementById("name").value === "") {
-        document.getElementById('myBtn').disabled = true;
-    } else {
-        document.getElementById('myBtn').disabled = false;
-    }
-}
-
 let score = 0;
+const button = document.querySelector("#button")
 
 initGame();
 
@@ -15,45 +8,21 @@ function getRandomInt(max) {
     return `${Math.floor(Math.random() * max)}%`;
 }
 
-let audio = new Audio('../static/music/background.mp3');
-audio.play()
 
 function initGame() {
     const modal = document.getElementById("myModal");
     const btn = document.getElementById("myBtn");
 
     btn.onclick = function () {
+        let audio = new Audio('../static/music/background.mp3');
+        audio.play()
         modal.style.display = "block";
-        alert('Hit only the ALERT button as many times as possible. Do not let the alerts to trick you!')
+        alert('Hit only the ALERT button as many times as possible. Do not let the other alerts to trick you!')
     }
-    const button = document.querySelector("#button")
-    let mines = document.getElementsByClassName("mine")
-    let hardMinesClass = document.getElementsByClassName("hardMine")
-    let endScore = count_score();
-    for (let i = 0; i < mines.length; i++) {
-        button.addEventListener("click", function () {
-            goHardMode(hardMinesClass, button)
-            let top = getRandomInt(98);
-            let left = getRandomInt(98);
-            mines[i].style.top = top;
-            mines[i].style.left = left;
-            mines[i].style.opacity = "100";
-        });
-        mines[i].addEventListener("click", function () {
-            let top = getRandomInt(98);
-            let left = getRandomInt(98);
-            modal.style.display = "block";
-            mines[i].style.top = top;
-            mines[i].style.left = left;
-        })
-    }
-    button.addEventListener("click", function () {
-        let top = getRandomInt(98);
-        let left = getRandomInt(98);
-        modal.style.display = "block";
-        button.style.top = top;
-        button.style.left = left;
-    });
+    count_score();
+    moveMinesAfterButtonPress()
+    pressButton(modal)
+    pressWrongAlert()
     restart()
 }
 
@@ -79,12 +48,11 @@ function countdown(duration, display) {
             openedWindow.style.display = "none";
             start.style.display = "none";
 
-			 restart[0].classList.remove("hide_button");
-			 document.getElementById("save-button").disabled = false;
- 		}
+            restart[0].classList.remove("hide_button");
+            document.getElementById("save-button").disabled = false;
+        }
 
-
- 	}, 1000);
+    }, 1000);
 }
 
 window.onload = function () {
@@ -93,8 +61,6 @@ window.onload = function () {
         let oneMinute = 60,
             display = document.querySelector('#time');
         countdown(oneMinute, display)
-
-
     })
 }
 
@@ -132,9 +98,9 @@ function restart() {
     })
 }
 
-function goHardMode(hardMinesClass, button) {
-    if (score === 10) {
-        console.log('here')
+function goPhaseTwo(button) {
+    let hardMinesClass = document.getElementsByClassName("hardMine-Phase-Two")
+    if (score === 5) {
         for (let hard = 0; hard < hardMinesClass.length; hard++) {
             button.addEventListener("click", function () {
                 let top = getRandomInt(98);
@@ -144,5 +110,65 @@ function goHardMode(hardMinesClass, button) {
                 hardMinesClass[hard].style.opacity = "100"
             });
         }
+    }
+}
+
+function goPhaseThree(button) {
+    let hardMinePhaseThree = document.getElementsByClassName("hardMine-Phase-Three")
+    if (score === 10) {
+        for (let hard = 0; hard < hardMinePhaseThree.length; hard++) {
+            button.addEventListener("click", function () {
+                let top = getRandomInt(98);
+                let left = getRandomInt(98);
+                hardMinePhaseThree[hard].style.top = top;
+                hardMinePhaseThree[hard].style.left = left;
+                hardMinePhaseThree[hard].style.opacity = "100"
+            });
+        }
+    }
+}
+
+function pressWrongAlert() {
+    let mines = document.getElementsByClassName("mine")
+    for (let i = 0; i < mines.length; i++) {
+        mines[i].addEventListener("click", function () {
+            let top = getRandomInt(98);
+            let left = getRandomInt(98);
+            modal.style.display = "block";
+            mines[i].style.top = top;
+            mines[i].style.left = left;
+        })
+    }
+}
+
+function pressButton(modal) {
+    button.addEventListener("click", function () {
+        let top = getRandomInt(98);
+        let left = getRandomInt(98);
+        modal.style.display = "block";
+        button.style.top = top;
+        button.style.left = left;
+    });
+}
+
+function moveMinesAfterButtonPress(){
+    let mines = document.getElementsByClassName("mine")
+    for (let i = 0; i < mines.length; i++) {
+        button.addEventListener("click", function () {
+            goPhaseTwo(button)
+            goPhaseThree(button)
+            let top = getRandomInt(98);
+            let left = getRandomInt(98);
+            mines[i].style.top = top;
+            mines[i].style.left = left;
+            mines[i].style.opacity = "100";
+        });
+    }}
+
+function success() {
+    if (document.getElementById("name").value === "") {
+        document.getElementById('myBtn').disabled = true;
+    } else {
+        document.getElementById('myBtn').disabled = false;
     }
 }
