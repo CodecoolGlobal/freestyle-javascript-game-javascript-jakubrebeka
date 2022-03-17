@@ -28,7 +28,7 @@ function initGame() {
   	const button = document.querySelector("#button")
 	const mine = document.querySelector("#mine")
 	count_score();
-	let audio = new Audio('../music/background.mp3');
+	let audio = new Audio('../static/music/background.mp3');
 	audio.play();
 	}
 
@@ -93,7 +93,7 @@ function count_score(){
 	let score = 0;
  	let pop = document.getElementById("button");
 	pop.addEventListener("click", () =>{
-		let sound = new Audio('../music/success.wav');
+		let sound = new Audio('../static/music/success.wav');
 		sound.play();
 		score += 1;
 		console.log(score);
@@ -101,7 +101,7 @@ function count_score(){
 	})
 		let mineClick = document.getElementById("mine");
 	mineClick.addEventListener('click', () => {
-		let sound2 = new Audio('../music/miss.wav');
+		let sound2 = new Audio('../static/music/miss.wav');
 		sound2.play();
 		score -= 1;
 		console.log(score);
