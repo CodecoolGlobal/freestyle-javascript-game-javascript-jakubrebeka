@@ -94,6 +94,8 @@ function count_score(){
 	})
 		let mineClick = document.getElementById("mine");
 	mineClick.addEventListener('click', () => {
+		let sound2 = new Audio('../music/miss.wav');
+		sound2.play();
 		score -= 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
