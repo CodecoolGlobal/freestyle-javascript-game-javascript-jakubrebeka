@@ -26,8 +26,10 @@ function initGame() {
   	modal.style.display = "block";
 
   	const button = document.querySelector("#button")
+	const mine = document.querySelector("#mine")
 	count_score();
-
+	let audio = new Audio('../music/background.mp3');
+	audio.play();
 	}
 
   	button.addEventListener("click", function () {
@@ -37,6 +39,22 @@ function initGame() {
   		button.style.top = top;
   		button.style.left = left;
   	});
+
+	button.addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		mine.style.top = top;
+		mine.style.left = left;
+	});
+
+	mine.addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		modal.style.display = "block";
+  		mine.style.top = top;
+  		mine.style.left = left;
+	})
+
 }
 
 
@@ -75,8 +93,19 @@ function count_score(){
 	let score = 0;
  	let pop = document.getElementById("button");
 	pop.addEventListener("click", () =>{
+		let sound = new Audio('../music/success.wav');
+		sound.play();
 		score += 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
-	})}
+	})
+		let mineClick = document.getElementById("mine");
+	mineClick.addEventListener('click', () => {
+		let sound2 = new Audio('../music/miss.wav');
+		sound2.play();
+		score -= 1;
+		console.log(score);
+		score_num.innerText="Score: "+ score;
+	})
+}
 
