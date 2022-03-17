@@ -8,8 +8,30 @@
     </head>
     
     <body>
-	result
-   
+	<table border="1" id="bonus">
+<thead>
+    <tr class="header">
+        <th>ID</th>
+        <th>Player</th>
+        <th>Score</th>
+    </tr>
+</thead>
+
+<tbody>
+    {% for row in data %}
+    <tr>
+        <td>{{ row.id }}</td>
+        <td>{{ row.username }}</td>
+        <td>{{ row.score }}</td>
+    </tr>
+</tbody>
+{% endfor %}
+</table>
+       <form action="/">
+    <input id="back" type="submit" value="Back to menu" />
+    </form>
+
+
     </body>
     
 </html>

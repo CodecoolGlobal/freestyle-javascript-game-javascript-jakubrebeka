@@ -11,8 +11,7 @@ initGame();
 function getRandomInt(max) {
   		return `${Math.floor(Math.random() * max)}%`;
 	}
-let audio = new Audio('../static/music/background.mp3');
-	audio.play()
+
 function initGame() {
 
     	// Get the modal
@@ -28,6 +27,8 @@ function initGame() {
   	const button = document.querySelector("#button")
 	const mine = document.querySelector("#mine")
 	count_score();
+	let audio = new Audio('../static/music/background.mp3');
+	audio.play();
 	}
 	let mines = document.getElementsByClassName("mine")
 	let mine2 = document.getElementById("mine2")
@@ -73,6 +74,7 @@ function initGame() {
  		display.innerText = minutes + ":" + seconds;
 
 
+
  		if (--timer < 0) {
  			timer = duration;
  		}
@@ -85,7 +87,10 @@ window.onload = function (){
 			 display = document.querySelector('#time');
 	countdown(oneMinute,display)
 
+
+
  })}
+
 let score = 0;
 
 
@@ -95,12 +100,14 @@ function count_score(){
  	let pop = document.getElementById("button");
 	let mineClick = document.getElementsByClassName("mine");
 
+	let asd = document.querySelector("#result")
 	pop.addEventListener("click", () =>{
 		let sound = new Audio('../static/music/success.wav');
 		sound.play();
 		score += 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
+		asd.setAttribute('value',`${score}`);
 	})
 
 	for (let i=0; i<mineClick.length; i++) {
@@ -110,6 +117,7 @@ function count_score(){
 		score -= 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
+		asd.setAttribute('value',`${score}`);
 	})
 }}
 
