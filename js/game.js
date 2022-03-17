@@ -49,6 +49,7 @@ function initGame() {
 
 }
 
+
  function countdown(duration,display) {
  	let timer = duration, minutes, seconds;
  	setInterval(function () {
@@ -77,6 +78,7 @@ window.onload = function (){
 
 
  })}
+
 
 function count_score(){
 	let score_num = document.getElementById("score-num")
