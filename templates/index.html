@@ -9,10 +9,10 @@
     
     <body>
 
-    <form>
+    <form action="/" method="post">
     <label for="name">Player</label>
-    <input id="name" type="text" onkeyup="success()">
-	<button type="submit" id="myBtn" disabled>Start Game</button>
+    <input name="player" id="name" type="text" onkeyup="success()">
+	<button type="submit" id="myBtn" name="start" value="start" disabled>Start Game</button>
     </form>
 
 	<div id="myModal" class="modal">

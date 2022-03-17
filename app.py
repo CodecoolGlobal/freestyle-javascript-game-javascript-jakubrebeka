@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, request, session
+from flask import Flask, render_template, redirect, url_for, request, session, Response
 import database_manager
 
 app = Flask(__name__)
@@ -6,8 +6,13 @@ app = Flask(__name__)
 app.secret_key = b'_5#y2L"F4Q8zxec]/'
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
+    if request.method == "POST":
+        if request.form.get("start") == "start":
+            player = request.form["player"]
+            print(player)
+            return Response(status=204)
     return render_template("index.html")
 
 
