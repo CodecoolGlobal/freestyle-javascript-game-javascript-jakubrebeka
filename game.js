@@ -32,6 +32,13 @@ function initGame() {
   		button.style.left = left;
   	});
 
+	button.addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		mine.style.top = top;
+		mine.style.left = left;
+	});
+
 	mine.addEventListener("click", function () {
 		let top = getRandomInt(98);
 		let left = getRandomInt(98);
@@ -79,5 +86,12 @@ function count_score(){
 		score += 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
-	})}
+	})
+		let mineClick = document.getElementById("mine");
+	mineClick.addEventListener('click', () => {
+		score -= 1;
+		console.log(score);
+		score_num.innerText="Score: "+ score;
+	})
+}
 
