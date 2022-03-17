@@ -51,16 +51,15 @@ function initGame() {
  		}
  	}, 1000);
 }
-window.onload = function (){
-	let time = document.getElementById("myBtn")
- time.addEventListener('click',(duration) =>{
-	let oneMinute = 60,
+    window.onload = function (){
+	    let time = document.getElementById("myBtn")
+    time.addEventListener('click',(duration) =>{
+	    let oneMinute = 60,
 			 display = document.querySelector('#time');
-	countdown(oneMinute,display)
+	    countdown(oneMinute,display)
 
-
-
- })}
+ }
+ )}
 
 
 function count_score(){
@@ -71,5 +70,14 @@ function count_score(){
 		score += 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
-	})}
+	})
+}
 
+function game_over(oneMinute){
+	setTimeout(function () {
+		
+		}
+	)
+
+
+}
