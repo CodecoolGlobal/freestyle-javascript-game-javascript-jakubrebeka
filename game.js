@@ -20,7 +20,8 @@ function initGame() {
 
   	const button = document.querySelector("#button")
 	count_score();
-
+	let audio = new Audio('music/background.mp3');
+	audio.play();
 	}
 
   	button.addEventListener("click", function () {
@@ -66,6 +67,8 @@ function count_score(){
 	let score = 0;
  	let pop = document.getElementById("button");
 	pop.addEventListener("click", () =>{
+		let sound = new Audio('music/success.wav');
+		sound.play();
 		score += 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
