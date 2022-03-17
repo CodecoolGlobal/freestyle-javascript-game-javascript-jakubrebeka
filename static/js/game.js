@@ -104,13 +104,14 @@ function count_score(){
 		console.log(score);
 		score_num.innerText="Score: "+ score;
 	})
-		let mineClick = document.getElementById("mine");
-	mineClick.addEventListener('click', () => {
+		let mineClick = document.getElementsByClassName("mine");
+	for (let i=0; i<mineClick.length; i++) {
+		mineClick[i].addEventListener('click', () => {
 		let sound2 = new Audio('../static/music/miss.wav');
 		sound2.play();
 		score -= 1;
 		console.log(score);
 		score_num.innerText="Score: "+ score;
 	})
-}
+}}
 
