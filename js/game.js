@@ -99,3 +99,12 @@ function count_score(){
 	})
 }
 
+function game_over(oneMinute){
+	let when_to_stop = 0;
+	if oneMinute == when_to_stop:
+		setTimeout(function () {
+
+			}
+		)
+
+}
