@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS players;
+
 create table players (
 	id serial NOT NULL,
 	username text,

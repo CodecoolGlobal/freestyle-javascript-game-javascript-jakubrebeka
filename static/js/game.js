@@ -79,10 +79,12 @@ function countdown(duration, display) {
             openedWindow.style.display = "none";
             start.style.display = "none";
 
-            restart[0].classList.remove("hide_button");
-            save_btn.classList.remove("hide_button");
-        }
-    }, 1000);
+			 restart[0].classList.remove("hide_button");
+			 document.getElementById("save-button").disabled = false;
+ 		}
+
+
+ 	}, 1000);
 }
 
 window.onload = function () {
@@ -110,7 +112,6 @@ function count_score() {
         score_num.innerText = "Score: " + score;
         asd.setAttribute('value', `${score}`);
     })
-
     for (let i = 0; i < mineClick.length; i++) {
         mineClick[i].addEventListener('click', () => {
 

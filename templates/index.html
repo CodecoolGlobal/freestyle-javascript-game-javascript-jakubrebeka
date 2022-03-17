@@ -9,21 +9,31 @@
     
     <body>
 
-    <form action="/" method="post">
-    <label for="name">Player</label>
-    <input name="player" id="name" type="text" onkeyup="success()">
-	<button type="submit" id="myBtn" name="start" value="start" disabled>Start Game</button>
 
-    </form>
+        <form action="/" method="post">
+
+
+    <input name="player" id="name" type="text" onkeyup="success()" placeholder="Give a name to start the game!" size="21">
+
+	<button type="submit" id="myBtn" name="start" value="start" disabled>Start Game</button>
+        </form>
+
+
+
+
+
     <form action="/result">
     <input id="score" type="submit" value="Scores" />
     </form>
-        <button class="restart hide_button">Restart Game </button>
 
+    </form>
+    <form action="/">
+    <input class="restart hide_button" id="restart" type="submit" value="Restart Game" />
+    </form>
 
                     <form method="POST" action="/result">
-                <input id="result" type="hidden" name="result" value="a"/>
-                <button type="submit" id="save-button" class="hide_button">Save</button>
+                <input id="result" type="hidden" name="result" value="0"/>
+                <button type="submit" id="save-button" disabled>Save</button>
                 </form>
 
 	<div id="myModal" class="modal">
