@@ -82,7 +82,9 @@ function initGame() {
 
 
 
- 		if (--timer < 0) {
+ 		if (--timer === 0) {
+			 let game_over = new Audio('../static/music/game_over.mp3');
+		game_over.play();
 			 openedWindow.style.display = "none";
 start.style.display = "none";
 			 restart[0].classList.remove("hide_button");
