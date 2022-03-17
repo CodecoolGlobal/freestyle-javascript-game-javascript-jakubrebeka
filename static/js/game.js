@@ -24,7 +24,7 @@ function initGame() {
 	// When the user clicks the button, open the modal 
 	btn.onclick = function() {
   	modal.style.display = "block";
-	alert('Hit the ALERT button only as many times as possible!')
+	alert('Hit only the ALERT button as many times as possible. Do not let the alerts to trick you!')
   	const button = document.querySelector("#button")
 	const mine = document.querySelector("#mine")
 	count_score();
