@@ -31,6 +31,7 @@ function initGame() {
   	});
 }
 
+
 function count_score(){
 	var score_num = document.getElementById("score-num")
 	var score = 0;
