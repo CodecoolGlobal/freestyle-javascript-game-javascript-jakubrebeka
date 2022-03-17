@@ -71,6 +71,7 @@ function initGame() {
 	 let openedWindow= document.getElementById("myModal")
 	 let restart = document.getElementsByClassName("restart")
 	 let start = document.getElementById("myBtn")
+	 let save_btn = document.getElementById("save-button")
  	setInterval(function () {
  		minutes = parseInt(timer / 60, 10);
  		seconds = parseInt(timer % 60, 10);
@@ -87,15 +88,16 @@ function initGame() {
 		game_over.play();
 			 openedWindow.style.display = "none";
 start.style.display = "none";
-			 restart[0].classList.remove("hide_button");
 
+			 restart[0].classList.remove("hide_button");
+			 save_btn.classList.remove("hide_button");
  		}
  	}, 1000);
 }
     window.onload = function (){
 	    let time = document.getElementById("myBtn")
     time.addEventListener('click',(duration) =>{
-	    let oneMinute = 5,
+	    let oneMinute = 60,
 			 display = document.querySelector('#time');
 	    countdown(oneMinute,display)
 
