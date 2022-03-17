@@ -19,6 +19,7 @@ function initGame() {
   	modal.style.display = "block";
 
   	const button = document.querySelector("#button")
+	const mine = document.querySelector("#mine")
 	count_score();
 
 	}
@@ -30,6 +31,15 @@ function initGame() {
   		button.style.top = top;
   		button.style.left = left;
   	});
+
+	mine.addEventListener("click", function () {
+		let top = getRandomInt(98);
+		let left = getRandomInt(98);
+		modal.style.display = "block";
+  		mine.style.top = top;
+  		mine.style.left = left;
+	})
+
 }
 
  function countdown(duration,display) {
