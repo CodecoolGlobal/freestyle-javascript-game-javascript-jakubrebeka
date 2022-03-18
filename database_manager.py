@@ -1,3 +1,5 @@
+from psycopg2 import sql
+
 import database_common
 
 
@@ -10,8 +12,9 @@ def show_scores(cursor):
 
 @database_common.connection_handler
 def add_scores(cursor, username, score):
-    cursor.execute(f"""INSERT INTO players (username, score)
-                    VALUES ('{username}', '{score}');""")
+    query = sql.SQL("INSERT INTO players (username, score) VALUES ({username}, {score})").format(
+        username=sql.Literal(username), score=sql.Literal(score))
+    cursor.execute(query)
     return cursor.statusmessage
 
 
