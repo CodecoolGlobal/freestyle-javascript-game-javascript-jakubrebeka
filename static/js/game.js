@@ -1,13 +1,8 @@
 let score = 0;
 const button = document.querySelector("#button")
 
+
 initGame();
-
-
-function getRandomInt(max) {
-    return `${Math.floor(Math.random() * max)}%`;
-}
-
 
 function initGame() {
     const modal = document.getElementById("myModal");
@@ -22,9 +17,15 @@ function initGame() {
     count_score();
     moveMinesAfterButtonPress()
     pressButton(modal)
-    pressWrongAlert()
+    pressWrongAlert(modal)
     restart()
 }
+
+
+function getRandomInt(max) {
+    return `${Math.floor(Math.random() * max)}%`;
+}
+
 
 function countdown(duration, display) {
     let timer = duration, minutes, seconds;
@@ -55,6 +56,7 @@ function countdown(duration, display) {
     }, 1000);
 }
 
+
 window.onload = function () {
     let time = document.getElementById("myBtn")
     time.addEventListener('click', (duration) => {
@@ -68,8 +70,6 @@ window.onload = function () {
 function count_score() {
     let score_num = document.getElementById("score-num")
     let pop = document.getElementById("button");
-    let mineClick = document.getElementsByClassName("mine");
-
     let asd = document.querySelector("#result")
     pop.addEventListener("click", () => {
         let sound = new Audio('../static/music/success.wav');
@@ -78,18 +78,30 @@ function count_score() {
         score_num.innerText = "Score: " + score;
         asd.setAttribute('value', `${score}`);
     })
+    decrementScore(score_num, asd);
+    return score
+}
+
+function decrementScore(score_num, asd){
+    let mineClick = document.getElementsByClassName("mine");
+    let hardMineClick = document.getElementsByClassName("hardMine");
     for (let i = 0; i < mineClick.length; i++) {
         mineClick[i].addEventListener('click', () => {
-
             let sound2 = new Audio('../static/music/miss.wav');
             sound2.play();
             score -= 1;
             score_num.innerText = "Score: " + score;
-            asd.setAttribute('value', `${score}`);
         })
     }
-    return score
-}
+    for (let i = 0; i < hardMineClick.length; i++) {
+        hardMineClick[i].addEventListener('click', () => {
+            let sound2 = new Audio('../static/music/miss.wav');
+            sound2.play();
+            score -= 1;
+            score_num.innerText = "Score: " + score;
+        })
+    }}
+
 
 function restart() {
     let restart = document.getElementsByClassName("restart")
@@ -97,6 +109,7 @@ function restart() {
         initGame()
     })
 }
+
 
 function goPhaseTwo(button) {
     let hardMinesClass = document.getElementsByClassName("hardMine-Phase-Two")
@@ -113,6 +126,7 @@ function goPhaseTwo(button) {
     }
 }
 
+
 function goPhaseThree(button) {
     let hardMinePhaseThree = document.getElementsByClassName("hardMine-Phase-Three")
     if (score === 10) {
@@ -128,8 +142,10 @@ function goPhaseThree(button) {
     }
 }
 
-function pressWrongAlert() {
+
+function pressWrongAlert(modal) {
     let mines = document.getElementsByClassName("mine")
+    let hardMineClick = document.getElementsByClassName("hardMine");
     for (let i = 0; i < mines.length; i++) {
         mines[i].addEventListener("click", function () {
             let top = getRandomInt(98);
@@ -139,7 +155,16 @@ function pressWrongAlert() {
             mines[i].style.left = left;
         })
     }
-}
+    for (let i = 0; i < hardMineClick.length; i++) {
+        hardMineClick[i].addEventListener("click", function () {
+            let top = getRandomInt(98);
+            let left = getRandomInt(98);
+            modal.style.display = "block";
+            hardMineClick[i].style.top = top;
+            hardMineClick[i].style.left = left;
+        })
+    }}
+
 
 function pressButton(modal) {
     button.addEventListener("click", function () {
@@ -164,6 +189,7 @@ function moveMinesAfterButtonPress(){
             mines[i].style.opacity = "100";
         });
     }}
+
 
 function success() {
     if (document.getElementById("name").value === "") {
